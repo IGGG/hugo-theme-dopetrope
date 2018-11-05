@@ -1,0 +1,18 @@
+{{ if .Site.Params.slider.enable }}
+
+<section class="featured-slider">
+  <div class="slider-cycle">
+  {{ $baseURL := .Site.BaseURL }}
+  {{ range $index, $url := .Site.Params.Slider.slides }}
+  <div class="slides {{ if eq $index 0 }} displayblock {{ else }} displaynone {{ end }}">
+    <figure>
+      <img src="{{ $baseURL }}/images/{{ $url }}" class="slide-image container">
+    </figure>
+  </div>
+  {{ end }}
+  </div>
+  <nav id="controllers" class="clearfix">
+  </nav>
+</section>
+
+{{ end }}
