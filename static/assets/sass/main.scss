@@ -30,7 +30,7 @@
 			desktop: (
 				containers: 1200px,
 				grid: (
-					gutters: (50px, 50px)
+					gutters: (0, 50px)
 				),
 			),
 			tablet: (
@@ -750,7 +750,7 @@
 		/* Section/Article */
 
 			header {
-				margin: 0 0 1.5em 0;
+				margin: 0 0 1em 0;
 
 				> p {
 					margin: 0.5em 0 0 0;
