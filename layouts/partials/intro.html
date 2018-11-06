@@ -1,48 +1,16 @@
 <!-- Intro -->
 <section id="intro" class="container">
+    <h2>{{ .Site.Data.home.intro.title }}</h2>
     <div class="row">
+        {{ range $part := .Site.Data.home.intro.sections }}
         <div class="4u 12u(mobile)">
             <section class="first">
-                {{ with index .Site.Data.home.intro.sections 0 }}
-                <i class='icon featured {{ .icon }}'></i>
                 <header>
-                    <h2>{{ .title }}</h2>
+                  <h2><i class='icon {{ $part.icon }} intro-icon'></i>{{ $part.title }}</h2>
                 </header>
-                <p>{{ .description }}</p>
-                {{ end }}
+                <p>{{ $part.description }}</p>
             </section>
         </div>
-        <div class="4u 12u(mobile)">
-            <section class="middle">
-                {{ with index .Site.Data.home.intro.sections 1 }}
-                <i class="icon featured alt {{ .icon }}"></i>
-                <header>
-                    <h2>{{ .title }}</h2>
-                </header>
-                <p>{{ .description }}</p>
-                {{ end }}
-            </section>
-        </div>
-        <div class="4u 12u(mobile)">
-            <section class="last">
-                {{ with index .Site.Data.home.intro.sections 2 }}
-                <i class="icon featured alt2 {{ .icon }}"></i>
-                <header>
-                    <h2>{{ .title }}</h2>
-                </header>
-                <p>{{ .description }}</p>
-                {{ end }}
-            </section>
-        </div>
+        {{ end }}
     </div>
-    <footer>
-        <ul class="actions">
-            {{ with index .Site.Data.home.intro.buttons 0 }}
-            <li><a href="{{ .link }}" class="button big">{{ .text }}</a></li>
-            {{ end }}
-            {{ with index .Site.Data.home.intro.buttons 1 }}
-            <li><a href="{{ .link }}" class="button alt big">{{ .text }}</a></li>
-            {{ end }}
-        </ul>
-    </footer>
 </section>
