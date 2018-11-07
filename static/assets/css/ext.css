@@ -17,6 +17,14 @@
   margin-top: 1em;
 }
 
+.widget-header {
+  margin-bottom: 20px !important;
+}
+
+.event-card-image {
+  max-width: 20em;
+}
+
 .intro-icon {
   margin-right: 0.5em;
   border-radius: 3px;

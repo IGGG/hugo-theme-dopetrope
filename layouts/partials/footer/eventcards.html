@@ -1,9 +1,17 @@
 <div class="4u 12u(mobile)">
     <section>
         {{ with index .Site.Data.footer.content.sections 2 }}
-        <header>
+        <header class="widget-header">
             <h2>{{ .title }}</h2>
         </header>
+        {{ range $event := .events }}
+        <ul class="event-cards">
+          <li class="event-card">
+            <h3>{{ $event.title }}</h3>
+            <a href="{{ $event.imagelink }}"><img class="event-card-image" src="{{ $event.imageurl }}"></a>
+          </li>
+        </ul>
+        {{ end }}
         {{ end }}
     </section>
 </div>
