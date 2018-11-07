@@ -1,0 +1,13 @@
+<div class="4u 12u(mobile)">
+    <section>
+        {{ with index .Site.Data.footer.content.sections 1 }}
+        <header>
+            <h2>{{ .title }}</h2>
+        </header>
+        {{ end }}
+        <a class="twitter-timeline" height="30em" href="https://twitter.com/{{ .Site.Params.Account.twitter }}?ref_url={{ .Site.BaseURL }}">
+          Tweets by {{ .Site.Params.Account.twitter }}
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </section>
+</div>

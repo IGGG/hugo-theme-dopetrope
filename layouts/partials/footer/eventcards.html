@@ -1,0 +1,9 @@
+<div class="4u 12u(mobile)">
+    <section>
+        {{ with index .Site.Data.footer.content.sections 2 }}
+        <header>
+            <h2>{{ .title }}</h2>
+        </header>
+        {{ end }}
+    </section>
+</div>
