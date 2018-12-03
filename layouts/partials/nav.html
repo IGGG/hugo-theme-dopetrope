@@ -2,11 +2,12 @@
 <nav id="nav">
     {{ $title   := .Page.Title }}
     {{ $relLink := .Page.RelPermalink }}
+    {{ $baseUrl := .Site.BaseURL }}
     <ul>
         {{ range $page := sort .Site.Params.Pages "order" }}
             {{ if $page.internal }}
             <li {{ if or (eq $title $page.title) (eq $relLink $page.link) }} class="current" {{ end }}>
-              <a href="{{ .Site.BaseURL }}{{ $page.link }}">{{ $page.title }}</a>
+              <a href="{{ $baseUrl }}{{ $page.link }}">{{ $page.title }}</a>
             </li>
             {{ else }}
             <li><a href="{{ $page.link }}">{{ $page.title }}</a></li>
