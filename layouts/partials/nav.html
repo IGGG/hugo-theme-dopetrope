@@ -1,13 +1,16 @@
 <!-- Nav -->
 <nav id="nav">
+    {{ $title   := .Page.Title }}
+    {{ $relLink := .Page.RelPermalink }}
     <ul>
-        <li class="current"><a href="{{ .Site.BaseURL }}">Home</a></li>
         {{ range $page := sort .Site.Params.Pages "order" }}
-        {{ if $page.useBaseURL }}
-        <li><a href="{{ .Site.BaseURL }}/{{ $page.link }}">{{ $page.title }}</a></li>
-        {{ else }}
-        <li><a href="{{ $page.link }}">{{ $page.title }}</a></li>
-        {{ end }}
+            {{ if $page.internal }}
+            <li {{ if or (eq $title $page.title) (eq $relLink $page.link) }} class="current" {{ end }}>
+              <a href="{{ .Site.BaseURL }}{{ $page.link }}">{{ $page.title }}</a>
+            </li>
+            {{ else }}
+            <li><a href="{{ $page.link }}">{{ $page.title }}</a></li>
+            {{ end }}
         {{ end }}
     </ul>
 </nav>
