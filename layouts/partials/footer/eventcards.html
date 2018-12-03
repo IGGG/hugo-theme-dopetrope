@@ -8,7 +8,7 @@
         <ul class="event-cards">
           <li class="event-card">
             <h3>{{ $event.title }}</h3>
-            <a href="{{ $event.imagelink }}"><img class="event-card-image" src="{{ $event.imageurl }}"></a>
+            <a href="{{ $event.imagelink }}"><img class="event-card-image" src="{{ .Site.baseURL }}{{ $event.imageurl }}"></a>
           </li>
         </ul>
         {{ end }}
