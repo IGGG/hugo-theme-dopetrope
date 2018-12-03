@@ -63,3 +63,36 @@
   margin-top: 5px;
   letter-spacing: 0;
 }
+
+.post-content > * {
+  padding-left: 0.3em;
+}
+
+.post-content > h2 {
+  line-height: 1.6;
+  border-left: 8px solid lightgray;
+  margin-bottom: 1em;
+}
+
+.post-content > h3 {
+  line-height: 1.0;
+  margin-bottom: 0.5em;
+}
+
+.post-content ul {
+  list-style-type: initial;
+  padding-left: 2em;
+}
+
+.post-content > ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+li ul {
+  margin-bottom: 0;
+}
+
+strong,b {
+  font-weight: bold;
+}
