@@ -1,4 +1,5 @@
 <div class="4u 12u(mobile)">
+    {{ $baseUrl := .Site.BaseURL }}
     <section>
         {{ with index .Site.Data.footer.content.sections 2 }}
         <header class="widget-header">
@@ -8,7 +9,7 @@
         <ul class="event-cards">
           <li class="event-card">
             <h3>{{ $event.title }}</h3>
-            <a href="{{ $event.imagelink }}"><img class="event-card-image" src="{{ .Site.baseURL }}{{ $event.imageurl }}"></a>
+            <a href="{{ $event.imagelink }}"><img class="event-card-image" src="{{ $baseUrl }}{{ $event.imageurl }}"></a>
           </li>
         </ul>
         {{ end }}
