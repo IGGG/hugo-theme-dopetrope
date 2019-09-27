@@ -15,8 +15,8 @@
 			<div id="main-wrapper">
 				<div class="container">
 
-					{{ $paginator := .Paginate (where .Data.Pages "Type" .Site.Params.Blog.foldername) }}
-					{{ partial "blog.html" (dict "title" .Site.Params.Blog.title "paginator" $paginator) }}
+					{{ $paginator := .Paginate (where .Data.Pages "Type" .Site.Params.News.foldername) }}
+					{{ partial "news.html" (dict "title" .Site.Params.News.title "paginator" $paginator) }}
 
 					<footer>
 						<ul class="actions" style="text-align: center">
@@ -40,5 +40,5 @@
 	{{ if .Site.Params.Settings.disqus }}
 	<script id="dsq-count-scr" src="//{{ .Site.Params.Settings.disqus }}.disqus.com/count.js" async></script>
 	{{ end }}
-		
+
 {{ end }}
